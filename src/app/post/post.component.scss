@@ -1,28 +1,16 @@
-h3 {
+h4 {
     margin: 30px auto;
-    font-weight: normal;
+    font-weight: 900;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
+    color: #ad5718;
 }
-.subject {
-    padding: 15px;
-    p {
-        margin: 10px 0;
-        text-align: center;
-        a {
-            text-decoration: none;
-            color: #ad5718;
-            &:hover{
-                text-decoration: underline;
-            }
-        }
-    }
-}
-div {
+.buttons {
     padding: 10px;
     text-align: right;
     button {
+        margin: 0 5px;
         padding: 5px;
         text-transform: uppercase;
         font-size: 0.8rem;
@@ -34,6 +22,26 @@ div {
             box-shadow: 0 0 7px #ad5718;
             color: #ad5718;
             background-color: #fff;
+        }
+    }
+}
+.post {
+    margin: 10px 20px;
+    padding: 10px;
+    border: 1px solid #ad5718;
+    p {
+        margin: 7px;
+    }
+    .subcjet {
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #ad5718;
+    }
+    .author {
+        font-weight: 900;
+        span {
+            text-transform: uppercase;
+            color: #ad5718;
         }
     }
 }
