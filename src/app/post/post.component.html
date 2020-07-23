@@ -1,15 +1,17 @@
 <h4>Subcjet: Wczytywany</h4>
-<div class="post">
-    <p class="subcjet">Tytuł: wczytywany</p>
+<div
+    *ngFor="let post of posts"
+    class="post"
+>
+    <p class="subcjet">Tytuł: {{post.subject}}</p>
     <p class="author">
         <span>Autor:</span>
-        Jak kowalski
+        {{post.author}}
     </p>
-    <p class="text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa error sapiente, a aliquam voluptatibus, ipsam quidem quas sed, dolorum consectetur est nemo explicabo vero! Nihil dolor harum illum minima incidunt.
-    </p>
+    <p class="text">{{post.text}}</p>
 </div>
-<div class="buttons">
-    <button>Homepage</button>
-    <button>Back to posts</button>
+<div class="actions">
+    <a href="#">Homepage</a>
+    <a href="#">Back</a>
+    <button>Add post</button>
 </div>

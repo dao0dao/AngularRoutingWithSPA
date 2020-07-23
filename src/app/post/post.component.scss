@@ -6,9 +6,18 @@ h4 {
     letter-spacing: 1px;
     color: #ad5718;
 }
-.buttons {
+.actions {
     padding: 10px;
     text-align: right;
+    a {
+        margin: 0 5px;
+        color: #ad5718;
+        text-transform: uppercase;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
     button {
         margin: 0 5px;
         padding: 5px;
@@ -18,7 +27,7 @@ h4 {
         border-radius: 5px;
         border: 1px solid #ad5718;
         background-color: #ad5718;
-        &:hover {
+        &:active {
             box-shadow: 0 0 7px #ad5718;
             color: #ad5718;
             background-color: #fff;
