@@ -8,7 +8,8 @@ import { PostsComponent } from './posts/posts.component';
 import { AboutComponent } from './about/about.component';
 import { EditComponent } from './edit/edit.component';
 import { PostComponent } from './post/post.component';
-import {DataService} from './service/data.service'
+import { DataService } from './service/data.service'
+import { FunctionsService } from './service/functions.service'
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import {DataService} from './service/data.service'
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [DataService],
+  providers: [DataService, FunctionsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,9 +1,9 @@
-<h4>Subcjet: Wczytywany</h4>
+<h4>Subcjet: {{posts[0].subject}}</h4>
 <div
     *ngFor="let post of posts"
     class="post"
 >
-    <p class="subcjet">Tytuł: {{post.subject}}</p>
+    <p class="subcjet">Subject: {{post.subject}}</p>
     <p class="author">
         <span>Autor:</span>
         {{post.author}}
@@ -11,7 +11,7 @@
     <p class="text">{{post.text}}</p>
 </div>
 <div class="actions">
-    <a href="#">Homepage</a>
-    <a href="#">Back</a>
-    <button>Add post</button>
+    <a routerLink="/">Homepage</a>
+    <a routerLink="/posts">Back</a>
+    <button>Add answer</button>
 </div>
