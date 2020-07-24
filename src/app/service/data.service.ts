@@ -14,6 +14,9 @@ export interface Post {
 
 export class DataService {
 
+  subjectId: number = 3
+  postId: number = 6
+
   posts: Post[] = [{
     subjectId: 0,
     postId: 0,
@@ -34,19 +37,19 @@ export class DataService {
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa error sapiente, a aliquam voluptatibus, ipsam quidem quas sed, dolorum consectetur est nemo explicabo vero! Nihil dolor harum illum minima incidunt.'
   }, {
     subjectId: 1,
-    postId: 1,
+    postId: 3,
     subject: 'Możliwe że jest ciężki',
     author: 'Leopold',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa error sapiente, a aliquam voluptatibus, ipsam quidem quas sed, dolorum consectetur est nemo explicabo vero! Nihil dolor harum illum minima incidunt.'
-  },{
+  }, {
     subjectId: 2,
-    postId: 0,
+    postId: 4,
     subject: 'Jednak do opanowania',
     author: 'Tajga',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa error sapiente, a aliquam voluptatibus, ipsam quidem quas sed, dolorum consectetur est nemo explicabo vero! Nihil dolor harum illum minima incidunt.'
   }, {
     subjectId: 2,
-    postId: 1,
+    postId: 5,
     subject: 'Jednak do opanowania',
     author: 'Leopold',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa error sapiente, a aliquam voluptatibus, ipsam quidem quas sed, dolorum consectetur est nemo explicabo vero! Nihil dolor harum illum minima incidunt.'

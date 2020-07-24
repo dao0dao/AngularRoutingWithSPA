@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService, Post } from '../service/data.service';
+import { Component, OnInit, DoCheck } from '@angular/core';
+import { Post } from '../service/data.service';
 import { FunctionsService } from '../service/functions.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { FunctionsService } from '../service/functions.service';
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.scss']
 })
-export class PostsComponent implements OnInit {
+export class PostsComponent implements OnInit, DoCheck {
 
   posts: Post[]
   subjects: Post[] = []
@@ -17,6 +17,9 @@ export class PostsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.subjects = this.funService.filterSubjects()
+  }
+  ngDoCheck() {
     this.subjects = this.funService.filterSubjects()
   }
 }

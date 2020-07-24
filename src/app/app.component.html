@@ -3,7 +3,10 @@
         <h1>{{title}}</h1>
     </div>
     <ul>
-        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <li
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}"
+        >
             <a [routerLink]="['/']">Home</a>
         </li>
         <li routerLinkActive="active">
@@ -21,3 +24,4 @@
     </ul>
 </nav>
 <router-outlet></router-outlet>
+<app-add-topic *ngIf="funService.newTopic"></app-add-topic>

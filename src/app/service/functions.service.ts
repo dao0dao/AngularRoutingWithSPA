@@ -7,12 +7,39 @@ import { DataService, Post } from './data.service';
 })
 export class FunctionsService {
 
+  newTopic: boolean = false
+
+
   HomePage() {
     this.router.navigate(['/'])
   }
 
   PostPage() {
     this.router.navigate(['posts'])
+  }
+
+  openNewTopic() {
+    this.newTopic = true
+  }
+  closeTopic() {
+    this.newTopic = false
+  }
+
+  addTopic(subjectId: number, subject: string, author: string, postId: number, text: string) {
+    let post: Post
+    post = {
+      subjectId,
+      subject,
+      author,
+      postId,
+      text
+    }
+    this.dataPosts.posts.push(post);
+    this.closeTopic();
+  }
+
+  cancleTopic() {
+    this.newTopic = false
   }
 
   filterPosts() {

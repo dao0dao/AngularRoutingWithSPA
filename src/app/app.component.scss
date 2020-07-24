@@ -6,6 +6,19 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    position: relative;
+}
+app-add-topic {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+}
 nav {
     @media (min-width: 600px) {
         display: flex;
@@ -33,7 +46,7 @@ nav {
                 text-decoration: none;
                 color: white;
             }
-            button{
+            button {
                 padding: 3px 5px;
                 border-radius: 5px;
                 font-size: 0.8rem;
@@ -41,7 +54,7 @@ nav {
                 letter-spacing: 1px;
                 border: 1px solid #fff;
                 background-color: #fff;
-                &:active{
+                &:active {
                     color: #fff;
                     box-shadow: 0 0 7px #fff;
                     border-color: #7618ad;
@@ -54,5 +67,4 @@ nav {
             border-radius: 5px;
         }
     }
-
 }
