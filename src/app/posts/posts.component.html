@@ -4,13 +4,13 @@
         Subject:
         <a
             [routerLink]="['/posts', subject.subjectId]"
-            [queryParams]="{'subject' : subject.subjectId}"
+            [queryParams]="{'subjectId' : subject.subjectId}"
         >
             {{subject.subject}}
         </a>
     </p>
 </div>
 <div>
-    <button (click)="funService.openNewTopic()">Add a topic</button>
+    <button (click)="funService.newTopic()">Add a topic</button>
     <button (click)="funService.HomePage()">Homepage</button>
 </div>

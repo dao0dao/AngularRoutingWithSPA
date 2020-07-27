@@ -11,7 +11,7 @@ import { EditComponent } from './edit/edit.component';
 import { PostComponent } from './post/post.component';
 import { DataService } from './service/data.service'
 import { FunctionsService } from './service/functions.service';
-import { AddTopicComponent } from './add-topic/add-topic.component'
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { AddTopicComponent } from './add-topic/add-topic.component'
     AboutComponent,
     EditComponent,
     PostComponent,
-    AddTopicComponent
+    ModalComponent,
   ],
   imports: [
     BrowserModule,

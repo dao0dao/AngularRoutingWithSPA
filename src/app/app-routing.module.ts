@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'posts', component: PostsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'edit', component: EditComponent },
-  { path: 'posts/:subjectId', component: PostComponent } 
+  { path: 'posts/:subjectId', component: PostComponent },
 ];
 
 @NgModule({
@@ -21,5 +21,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {
-  
- }
+
+}

@@ -23,5 +23,5 @@
         </li>
     </ul>
 </nav>
+<app-modal *ngIf="funService.openedModal"></app-modal>
 <router-outlet></router-outlet>
-<app-add-topic *ngIf="funService.newTopic"></app-add-topic>

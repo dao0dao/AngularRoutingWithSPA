@@ -1,0 +1,76 @@
+<div class="container">
+    <form
+        [formGroup]="topicForm"
+        (ngSubmit)="submitFunction()"
+    >
+        <h4>{{title}}</h4>
+        <div class="content">
+            <label
+                for="topic"
+                *ngIf="funService.titleTopic"
+            >
+                <div class="info info--top">
+                    <p [ngClass]="{'moveUp' : subject.value ===''? false: true,
+                'info--invalid' : subject.invalid && subject.touched}">New topic</p>
+                </div>
+                <input
+                    formControlName="subject"
+                    type="text"
+                    id="topic"
+                    class="subject"
+                >
+                <div class="info info--errors">
+                    <p *ngIf="subject.errors?.required && subject.touched">Field is require</p>
+                    <p *ngIf="subject.errors?.startWithSpace">Can't starts with "space"</p>
+                </div>
+            </label>
+            <label
+                for="author"
+                [ngStyle]="funService.titleAnswer ? {gridColumn : '1/3', gridRow : '1/2'} : null"
+            >
+                <div class="info info--top">
+                    <p [ngClass]="{'moveUp' : author.value ===''? false: true,
+                'info--invalid' : author.invalid && author.touched}">Nick</p>
+                </div>
+                <input
+                    formControlName="author"
+                    type="text"
+                    id="author"
+                    class="author"
+                >
+                <div class="info info--errors">
+                    <p *ngIf="author.errors?.required && author.touched">Field is require</p>
+                    <p *ngIf="author.errors?.startWithSpace">Can't starts with "space"</p>
+                </div>
+            </label>
+            <label for="text">
+                <div class="info info--top">
+                    <p [ngClass]="{'moveUp' : text.value ===''? false: true, 'info--invalid' : text.invalid && text.touched}">Message:</p>
+                </div>
+                <textarea
+                    formControlName="text"
+                    id="text"
+                    rows="10"
+                ></textarea>
+                <div class="info info--errors">
+                    <p *ngIf="text.errors?.required && text.touched">Field is require</p>
+                    <p *ngIf="text.errors?.startWithSpace">Can't starts with "space"</p>
+                </div>
+            </label>
+        </div>
+        <div class="actions">
+            <button
+                type="submit"
+                [disabled]="topicForm.invalid"
+            >
+                {{buttonText}}
+            </button>
+            <button
+                type="button"
+                (click)="funService.closeModal()"
+            >
+                Cancel
+            </button>
+        </div>
+    </form>
+</div>

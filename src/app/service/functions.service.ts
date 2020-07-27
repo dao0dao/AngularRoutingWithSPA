@@ -7,8 +7,9 @@ import { DataService, Post } from './data.service';
 })
 export class FunctionsService {
 
-  newTopic: boolean = false
-
+  openedModal: boolean = false
+  titleTopic: boolean = false
+  titleAnswer: boolean = false
 
   HomePage() {
     this.router.navigate(['/'])
@@ -18,11 +19,22 @@ export class FunctionsService {
     this.router.navigate(['posts'])
   }
 
-  openNewTopic() {
-    this.newTopic = true
+  newTopic() {
+    this.titleTopic = true;
+    this.openModal();
   }
-  closeTopic() {
-    this.newTopic = false
+  newAnswer() {
+    this.titleAnswer = true;
+    this.openModal()
+  }
+  openModal() {
+    this.openedModal = true
+  }
+
+  closeModal() {
+    this.titleTopic = false
+    this.titleAnswer = false
+    this.openedModal = false
   }
 
   addTopic(subjectId: number, subject: string, author: string, postId: number, text: string) {
@@ -35,18 +47,30 @@ export class FunctionsService {
       text
     }
     this.dataPosts.posts.push(post);
-    this.closeTopic();
+    this.dataPosts.postId++;
+    this.dataPosts.subjectId++;
+    this.closeModal();
   }
 
-  cancleTopic() {
-    this.newTopic = false
+  addAnswer(subjectId: number, subject: string, author: string, postId: number, text: string) {
+    let post: Post
+    post = {
+      subjectId,
+      subject,
+      author,
+      postId,
+      text
+    }
+    this.dataPosts.posts.push(post);
+    this.dataPosts.postId++;
+    this.closeModal();
   }
 
   filterPosts() {
     let subId: number;
     let posts: Post[];
     this.route.queryParams.subscribe(
-      res => subId = parseInt(res.subject)
+      res => subId = parseInt(res.subjectId)
     );
     posts = this.dataPosts.posts.filter(post => post.subjectId === subId);
     return posts

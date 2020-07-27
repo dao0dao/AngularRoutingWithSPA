@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService, Post } from '../service/data.service'
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, DoCheck } from '@angular/core';
+import { Post } from '../service/data.service'
 import { FunctionsService } from '../service/functions.service';
 
 @Component({
@@ -8,15 +7,18 @@ import { FunctionsService } from '../service/functions.service';
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss']
 })
-export class PostComponent implements OnInit {
+export class PostComponent implements OnInit, DoCheck {
 
   posts: Post[]
 
   constructor(
-    private funService: FunctionsService,
+    public funService: FunctionsService,
   ) { }
 
   ngOnInit() {
+    this.posts = this.funService.filterPosts()
+  }
+  ngDoCheck() {
     this.posts = this.funService.filterPosts()
   }
 }
