@@ -1,1 +1,29 @@
-<p>edit works!</p>
+<div>
+    <div
+        class="topic"
+        *ngFor="let topic of funService.filterSubjects()"
+    >
+        <h4>
+            Title:
+            <span (click)="activTopic(topic.subjectId)">{{topic.subject}}</span>
+        </h4>
+        <div
+            class="post"
+            *ngFor="let post of postsBySubject(topic.subjectId)"
+            [class.active]="topic.isActive"
+        >
+            <h6>
+                Author:
+                <span>{{post.author}}</span>
+            </h6>
+            <p>
+                <span>Text:</span>
+                {{post.text}}
+            </p>
+            <div class="actions">
+                <button (click)="funService.editPost(post.subjectId, post.postId)">Edit</button>
+                <button>Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

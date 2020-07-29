@@ -5,7 +5,8 @@ export interface Post {
   postId: number,
   subject: string,
   author: string,
-  text: string
+  text: string,
+  isActive?:boolean
 }
 
 @Injectable({
@@ -22,37 +23,43 @@ export class DataService {
     postId: 0,
     subject: 'Angular jest fajny',
     author: 'Jak Kowalski',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa error sapiente, a aliquam voluptatibus, ipsam quidem quas sed, dolorum consectetur est nemo explicabo vero! Nihil dolor harum illum minima incidunt.'
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa error sapiente, a aliquam voluptatibus, ipsam quidem quas sed, dolorum consectetur est nemo explicabo vero! Nihil dolor harum illum minima incidunt.',
+    isActive: false
   }, {
     subjectId: 0,
     postId: 1,
     subject: 'Angular jest fajny',
     author: 'Ryba Jan',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa error sapiente, a aliquam voluptatibus, ipsam quidem quas sed, dolorum consectetur est nemo explicabo vero! Nihil dolor harum illum minima incidunt.'
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa error sapiente, a aliquam voluptatibus, ipsam quidem quas sed, dolorum consectetur est nemo explicabo vero! Nihil dolor harum illum minima incidunt.',
+    isActive: false
   }, {
     subjectId: 1,
     postId: 0,
     subject: 'Możliwe że jest ciężki',
     author: 'Tajga',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa error sapiente, a aliquam voluptatibus, ipsam quidem quas sed, dolorum consectetur est nemo explicabo vero! Nihil dolor harum illum minima incidunt.'
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa error sapiente, a aliquam voluptatibus, ipsam quidem quas sed, dolorum consectetur est nemo explicabo vero! Nihil dolor harum illum minima incidunt.',
+    isActive: false
   }, {
     subjectId: 1,
     postId: 3,
     subject: 'Możliwe że jest ciężki',
     author: 'Leopold',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa error sapiente, a aliquam voluptatibus, ipsam quidem quas sed, dolorum consectetur est nemo explicabo vero! Nihil dolor harum illum minima incidunt.'
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa error sapiente, a aliquam voluptatibus, ipsam quidem quas sed, dolorum consectetur est nemo explicabo vero! Nihil dolor harum illum minima incidunt.',
+    isActive: false
   }, {
     subjectId: 2,
     postId: 4,
     subject: 'Jednak do opanowania',
     author: 'Tajga',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa error sapiente, a aliquam voluptatibus, ipsam quidem quas sed, dolorum consectetur est nemo explicabo vero! Nihil dolor harum illum minima incidunt.'
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa error sapiente, a aliquam voluptatibus, ipsam quidem quas sed, dolorum consectetur est nemo explicabo vero! Nihil dolor harum illum minima incidunt.',
+    isActive: false
   }, {
     subjectId: 2,
     postId: 5,
     subject: 'Jednak do opanowania',
     author: 'Leopold',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa error sapiente, a aliquam voluptatibus, ipsam quidem quas sed, dolorum consectetur est nemo explicabo vero! Nihil dolor harum illum minima incidunt.'
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa error sapiente, a aliquam voluptatibus, ipsam quidem quas sed, dolorum consectetur est nemo explicabo vero! Nihil dolor harum illum minima incidunt.',
+    isActive: false
   },]
 
   constructor() { }

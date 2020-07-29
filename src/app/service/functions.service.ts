@@ -10,6 +10,7 @@ export class FunctionsService {
   openedModal: boolean = false
   titleTopic: boolean = false
   titleAnswer: boolean = false
+  titleEdit: boolean = false
 
   HomePage() {
     this.router.navigate(['/'])
@@ -26,6 +27,9 @@ export class FunctionsService {
   newAnswer() {
     this.titleAnswer = true;
     this.openModal()
+  }
+  editPost(){
+
   }
   openModal() {
     this.openedModal = true
@@ -44,7 +48,8 @@ export class FunctionsService {
       subject,
       author,
       postId,
-      text
+      text,
+      isActive: false
     }
     this.dataPosts.posts.push(post);
     this.dataPosts.postId++;
