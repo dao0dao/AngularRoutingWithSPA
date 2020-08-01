@@ -11,6 +11,7 @@ export class FunctionsService {
   titleTopic: boolean = false
   titleAnswer: boolean = false
   titleEdit: boolean = false
+  editedPost: Post = null
 
   HomePage() {
     this.router.navigate(['/'])
@@ -28,8 +29,10 @@ export class FunctionsService {
     this.titleAnswer = true;
     this.openModal()
   }
-  editPost(){
-
+  editPost(post: Post) {
+    this.titleEdit = true;
+    this.editedPost = post
+    this.openModal()
   }
   openModal() {
     this.openedModal = true
@@ -38,6 +41,8 @@ export class FunctionsService {
   closeModal() {
     this.titleTopic = false
     this.titleAnswer = false
+    this.titleEdit = false
+    this.editedPost = null
     this.openedModal = false
   }
 
@@ -71,6 +76,19 @@ export class FunctionsService {
     this.closeModal();
   }
 
+  saveChanges(subjectId: number, postId: number, text: string) {
+    this.dataPosts.posts.map(post => {
+      if (post.subjectId === subjectId && post.postId === postId) {
+        post.text = text
+      }
+    })
+    this.closeModal()
+  }
+
+  deletePost(subjectId: number, postId: number) {
+    this.dataPosts.posts = this.dataPosts.posts.filter(post => !(post.subjectId == subjectId && post.postId == postId))
+  }
+
   filterPosts() {
     let subId: number;
     let posts: Post[];
@@ -78,6 +96,17 @@ export class FunctionsService {
       res => subId = parseInt(res.subjectId)
     );
     posts = this.dataPosts.posts.filter(post => post.subjectId === subId);
+    if (posts.length === 0) {
+      let er: Post = {
+        subjectId: null,
+        postId: null,
+        subject: '',
+        author: '',
+        text: ''
+      }
+      posts.push(er)
+      return posts
+    }
     return posts
   }
 
@@ -85,7 +114,7 @@ export class FunctionsService {
     let postsBySubject: Post[] = []
     let posts: Post[];
     posts = this.dataPosts.posts;
-    for (let i = 0; i < posts.length; i++) {
+    for (let i = 0; i < this.dataPosts.subjectId; i++) {
       function findSubject(element: Post) {
         if (element.subjectId === i) {
           return element

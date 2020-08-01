@@ -6,7 +6,7 @@ export interface Post {
   subject: string,
   author: string,
   text: string,
-  isActive?:boolean
+  isActive?: boolean
 }
 
 @Injectable({
@@ -37,14 +37,14 @@ export class DataService {
     postId: 0,
     subject: 'Możliwe że jest ciężki',
     author: 'Tajga',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa error sapiente, a aliquam voluptatibus, ipsam quidem quas sed, dolorum consectetur est nemo explicabo vero! Nihil dolor harum illum minima incidunt.',
+    text: 'Mr mr mru mr mr mru mru miau miau mr ph ph ph ph ph ph ph.',
     isActive: false
   }, {
     subjectId: 1,
     postId: 3,
     subject: 'Możliwe że jest ciężki',
     author: 'Leopold',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa error sapiente, a aliquam voluptatibus, ipsam quidem quas sed, dolorum consectetur est nemo explicabo vero! Nihil dolor harum illum minima incidunt.',
+    text: 'Gdzie mój mriau  whiskas, mriau kolacja już jest 18.00, mriau mriau mriau mriau mriau.',
     isActive: false
   }, {
     subjectId: 2,

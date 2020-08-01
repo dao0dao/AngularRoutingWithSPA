@@ -9,22 +9,9 @@ p{
     margin: 10px;
     font-size: 1rem;
     text-align: center;
-}
-div{
-    padding: 10px;
-    text-align: right;
-    button{
-        padding: 5px;
+    span{
         text-transform: uppercase;
-        font-size: 0.8rem;
-        color: white;
-        border-radius: 5px;
-        border: 1px solid #ad5718;
-        background-color: #ad5718;
-        &:active{
-            box-shadow: 0 0 7px #ad5718;
-            color: #ad5718;
-            background-color: #fff;
-        }
+        font-weight: 900;
+        color: #ad5718;
     }
 }

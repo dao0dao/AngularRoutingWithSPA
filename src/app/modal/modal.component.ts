@@ -32,6 +32,9 @@ export class ModalComponent implements OnInit {
     })
     this.funService.addAnswer(this.querryParams, subject[0].subject, this.author.value, this.postId.value, this.text.value)
   }
+  saveChanges() {
+    this.funService.saveChanges(this.subjectId.value, this.postId.value, this.text.value)
+  }
 
   get subjectId() {
     return this.topicForm.get('subjectId')
@@ -73,7 +76,16 @@ export class ModalComponent implements OnInit {
       this.subject.clearValidators()
       this.title = 'Add an answer'
       this.buttonText = 'Add a answer';
-
+    } else if (this.funService.titleEdit) {
+      this.submitFunction = this.saveChanges
+      this.postId.setValue(this.funService.editedPost.postId)
+      this.subject.setValue(this.funService.editedPost.subject)
+      this.subjectId.setValue(this.funService.editedPost.subjectId)
+      this.author.setValue(this.funService.editedPost.author)
+      this.author.disable({ onlySelf: true })
+      this.text.setValue(this.funService.editedPost.text)
+      this.title = 'Edit post'
+      this.buttonText = 'Save changes'
     };
     this.route.queryParams.subscribe(res => this.querryParams = parseInt(res.subjectId))
   }

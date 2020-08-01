@@ -9,7 +9,6 @@ import { FunctionsService } from '../service/functions.service';
 })
 export class PostsComponent implements OnInit, DoCheck {
 
-  posts: Post[]
   subjects: Post[] = []
 
   constructor(

@@ -12,6 +12,9 @@ import { PostComponent } from './post/post.component';
 import { DataService } from './service/data.service'
 import { FunctionsService } from './service/functions.service';
 import { ModalComponent } from './modal/modal.component';
+import { AtuthorisationService } from './service/atuthorisation.service'
+import { AuthGuardService } from './auth-guard.service';
+import { ErroPageComponent } from './erro-page/erro-page.component'
 
 @NgModule({
   declarations: [
@@ -22,6 +25,7 @@ import { ModalComponent } from './modal/modal.component';
     EditComponent,
     PostComponent,
     ModalComponent,
+    ErroPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,7 @@ import { ModalComponent } from './modal/modal.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [DataService, FunctionsService],
+  providers: [DataService, FunctionsService, AtuthorisationService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

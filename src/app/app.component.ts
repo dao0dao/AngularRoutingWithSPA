@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { FunctionsService } from './service/functions.service';
+import { AtuthorisationService } from './service/atuthorisation.service';
 
 @Component({
   selector: 'app-root',
@@ -10,5 +11,5 @@ import { FunctionsService } from './service/functions.service';
 export class AppComponent {
   title = 'Angular Routing';
 
-  constructor(public funService: FunctionsService) { }
+  constructor(public funService: FunctionsService, public authorisationService: AtuthorisationService) { }
 }

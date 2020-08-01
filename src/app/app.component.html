@@ -19,7 +19,7 @@
             <a [routerLink]="['/edit']">Edit</a>
         </li>
         <li>
-            <button>Logout</button>
+            <button (click)="authorisationService.changeStatus()">{{authorisationService.buttonText}}</button>
         </li>
     </ul>
 </nav>

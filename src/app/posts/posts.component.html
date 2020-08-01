@@ -1,4 +1,4 @@
-<h3>Posts:</h3>
+<h3 *ngIf="subjects.length!==0">Posts:</h3>
 <div class="subject">
     <p *ngFor="let subject of subjects">
         Subject:
@@ -10,7 +10,10 @@
         </a>
     </p>
 </div>
-<div>
+<h3 *ngIf="subjects.length===0">
+    No topics are available, please add new topic
+</h3>
+<div class="actions">
     <button (click)="funService.newTopic()">Add a topic</button>
     <button (click)="funService.HomePage()">Homepage</button>
 </div>

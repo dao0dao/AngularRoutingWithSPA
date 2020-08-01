@@ -1,3 +1,9 @@
+<h3
+    class="empty"
+    *ngIf="posts.length===0"
+>
+    No topics are available, please add new topic
+</h3>
 <div>
     <div
         class="topic"
@@ -10,7 +16,7 @@
         <div
             class="post"
             *ngFor="let post of postsBySubject(topic.subjectId)"
-            [class.active]="topic.isActive"
+            [class.active]="activeSubject[topic.subjectId].isActive"
         >
             <h6>
                 Author:
@@ -21,9 +27,20 @@
                 {{post.text}}
             </p>
             <div class="actions">
-                <button (click)="funService.editPost(post.subjectId, post.postId)">Edit</button>
-                <button>Delete</button>
+                <button (click)="funService.editPost(post)">Edit</button>
+                <button (click)="funService.deletePost(post.subjectId, post.postId)">Delete</button>
             </div>
         </div>
     </div>
+</div>
+<div
+    *ngIf="posts.length===0"
+    class="actions"
+>
+    <button
+        type="button"
+        (click)="funService.PostPage()"
+    >
+        posts
+    </button>
 </div>
